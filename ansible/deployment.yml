@@ -10,7 +10,7 @@
 
   tasks:
     - name: install python
-      dnf: name=python3 state=present
+      dnf: name=python2 state=present
       
     - name: install web server
       yum: name=httpd state=present
