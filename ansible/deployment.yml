@@ -9,8 +9,11 @@
     ansible_ssh_user: "ec2-user"
 
   tasks:
+    - name: install python
+      yum: name=python2 state=present
+      
     - name: install web server
-      action: yum name=httpd state=present
+      yum: name=httpd state=present
 
     - name: start webserver
       service: name=httpd state=started
