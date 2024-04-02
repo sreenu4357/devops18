@@ -10,7 +10,7 @@
 
   tasks:
     - name: install web server
-      yum: name=httpd state=present
+      action: yum name=httpd state=present
 
     - name: start webserver
       service: name=httpd state=started
