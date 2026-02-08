@@ -1,7 +1,7 @@
 resource "aws_launch_configuration" "web_server_as" {
-    image_id           = "ami-0c101f26f147fa7fd"
-    instance_type = "t2.micro"
-    key_name = "sreenu"
+    image_id           = "ami-0532be01f26a3de55"
+    instance_type = "t3.small"
+    key_name = "docker1"
 }
    
 
@@ -9,7 +9,7 @@ resource "aws_launch_configuration" "web_server_as" {
   resource "aws_elb" "web_server_lb"{
      name = "web-server-lb"
      security_groups = [aws_security_group.web_server.id]
-     subnets = ["subnet-08ccf95e25657ee53", "subnet-013272d01c5dd9f78"]
+     subnets = ["subnet-0deebf104e2c5f5b6", "subnet-042db347b997baee5"]
      listener {
       instance_port     = 8000
       instance_protocol = "http"
@@ -28,7 +28,7 @@ resource "aws_autoscaling_group" "web_server_asg" {
     desired_capacity     = 2
     health_check_type    = "EC2"
     load_balancers       = [aws_elb.web_server_lb.name]
-    availability_zones    = ["us-east-1d", "us-east-1f"] 
+    availability_zones    = ["us-east-1a", "us-east-1f"] 
     
   }
 
