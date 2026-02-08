@@ -1,4 +1,4 @@
-  resourcresource "aws_launch_template" "web_server_lt" {
+  resource "aws_launch_template" "web_server_lt" {
   name_prefix   = "web-server-lt-"
   image_id      = "ami-0532be01f26a3de55"
   instance_type = "t3.small"
