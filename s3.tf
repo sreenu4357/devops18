@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "one" {
-  bucket = "veera-s3.bucket"
+  bucket = "veera-flm.s3.bucket"
 }
 
 resource "aws_s3_bucket_ownership_controls" "two" {
